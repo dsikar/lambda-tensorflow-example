@@ -1,14 +1,14 @@
 # lambda-tensorflow-example
 Modified from 
-'''
+```
 https://aws.amazon.com/blogs/machine-learning/using-container-images-to-run-tensorflow-models-in-aws-lambda/  
-'''
+```
 
 ## Working order
 1. Create inference model as per
-'''
+```
 https://github.com/CityDataScienceSociety/ComputerVisionWorkshops/tree/main/detect-fire-with-AI
-'''
+```
 2. Create directory structure (cloned from repo)
 ```
 - lambda-tensorflow-example
@@ -34,7 +34,6 @@ $ docker tag lambda-tensorflow-example:latest  784146270336.dkr.ecr.eu-west-2.am
 $ aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin  784146270336.dkr.ecr.eu-west-2.amazonaws.com
 
 $ docker push  784146270336.dkr.ecr.eu-west-2.amazonaws.com/lambda-tensorflow-example:latest
-![image](https://user-images.githubusercontent.com/232522/124462552-b745e000-dd89-11eb-99cf-7b31376fc426.png)
 
 ```
 5. Register Lambda function and deploy docker image
@@ -43,7 +42,16 @@ $ docker push  784146270336.dkr.ecr.eu-west-2.amazonaws.com/lambda-tensorflow-ex
 
 ![image](https://user-images.githubusercontent.com/232522/124463678-24a64080-dd8b-11eb-84f6-defb26534834.png)
 
-7. Upload Tensorflow model to S3 bucket
-8. Upload example image to S3 bucket
-9. 
+6. Upload Tensorflow model to S3 bucket
+
+![image](https://user-images.githubusercontent.com/232522/124464158-bd3cc080-dd8b-11eb-97e8-c914769b27d7.png)
+
+7. Upload example image to S3 bucket
+
+![image](https://user-images.githubusercontent.com/232522/124464054-9c746b00-dd8b-11eb-9c75-06c92a857523.png)
+
+8. Verify prediction in CloudWatch
+
+![image](https://user-images.githubusercontent.com/232522/124464371-0856d380-dd8c-11eb-85ce-54ce3e630b99.png)
+
 
