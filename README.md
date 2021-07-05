@@ -1,3 +1,49 @@
 # lambda-tensorflow-example
-Modified from https://aws.amazon.com/blogs/machine-learning/using-container-images-to-run-tensorflow-models-in-aws-lambda/  
+Modified from 
+'''
+https://aws.amazon.com/blogs/machine-learning/using-container-images-to-run-tensorflow-models-in-aws-lambda/  
+'''
+
+## Working order
+1. Create inference model as per
+'''
+https://github.com/CityDataScienceSociety/ComputerVisionWorkshops/tree/main/detect-fire-with-AI
+'''
+2. Create directory structure (cloned from repo)
+```
+- lambda-tensorflow-example
+-- app.py
+-- Dockerfile
+-- requirements.txt
+```
+3. In app.py, edit line adding appropriate bucket and model name
+```
+result = client_s3.download_file("dsikar.models.bucket",'firemodel.h5', "/tmp/firemodel.h5")
+```
+
+4. Configure AWS CLI, create docker image and upload, changing AWS Account ID and region as appropriate
+```
+$ aws configure (…)
+
+$ docker build -t  lambda-tensorflow-example .
+
+$ aws ecr create-repository --repository-name lambda-tensorflow-example --image-scanning-configuration scanOnPush=true --region eu-west-2
+
+$ docker tag lambda-tensorflow-example:latest  784146270336.dkr.ecr.eu-west-2.amazonaws.com/lambda-tensorflow-example:latest
+
+$ aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin  784146270336.dkr.ecr.eu-west-2.amazonaws.com
+
+$ docker push  784146270336.dkr.ecr.eu-west-2.amazonaws.com/lambda-tensorflow-example:latest
+![image](https://user-images.githubusercontent.com/232522/124462552-b745e000-dd89-11eb-99cf-7b31376fc426.png)
+
+```
+5. Register Lambda function and deploy docker image
+
+![image](https://user-images.githubusercontent.com/232522/124463576-fe80a080-dd8a-11eb-9a39-faf82c7b8c8f.png)
+
+![image](https://user-images.githubusercontent.com/232522/124463678-24a64080-dd8b-11eb-84f6-defb26534834.png)
+
+7. Upload Tensorflow model to S3 bucket
+8. Upload example image to S3 bucket
+9. 
 
