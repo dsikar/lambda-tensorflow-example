@@ -51,6 +51,8 @@ $ docker push  784146270336.dkr.ecr.eu-west-2.amazonaws.com/lambda-tensorflow-ex
 
 ![image](https://user-images.githubusercontent.com/232522/124464054-9c746b00-dd8b-11eb-9c75-06c92a857523.png)
 
+![image](https://user-images.githubusercontent.com/232522/124465833-cb8bdc00-dd8d-11eb-8a40-44f9e79e0885.png)
+
 8. Verify prediction in CloudWatch
 
 ![image](https://user-images.githubusercontent.com/232522/124464371-0856d380-dd8c-11eb-85ce-54ce3e630b99.png)
