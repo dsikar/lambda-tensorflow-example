@@ -9,7 +9,7 @@ https://aws.amazon.com/blogs/machine-learning/using-container-images-to-run-tens
 ```
 https://github.com/CityDataScienceSociety/ComputerVisionWorkshops/tree/main/detect-fire-with-AI
 ```
-2. Create directory structure (cloned from repo)
+2. Create directory structure (cloned from this repo)
 ```
 - lambda-tensorflow-example
 -- app.py
