@@ -3,6 +3,7 @@ Modified from
 ```
 https://aws.amazon.com/blogs/machine-learning/using-container-images-to-run-tensorflow-models-in-aws-lambda/  
 ```
+with one notable change: in section **Connecting the S3 bucket to your Lambda function**, step 3. "Search for AmazonS3ReadOnlyAccess and attach it to the IAM role.", we use policy "AmazonS3FullAccess" because our modified Lambda function, in addition to reading from, will also be writing to a bucket
 Ran all local code on Ubuntu 18.04.
 
 ## Working order
