@@ -4,6 +4,10 @@ import numpy as np
 import PIL.Image as Image
 import tensorflow as tf
 
+# Change references to bucket as appropriate
+# 1. dsikar.models.bucket
+# 2. tensorflow-images-predictions-dsikar
+
 s3 = boto3.resource('s3')
 client_s3 = boto3.client('s3')
 result = client_s3.download_file("dsikar.models.bucket",'firemodel.h5', "/tmp/firemodel.h5")
