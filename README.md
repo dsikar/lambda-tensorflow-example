@@ -59,3 +59,18 @@ $ docker push  784146270336.dkr.ecr.eu-west-2.amazonaws.com/lambda-tensorflow-ex
 ![image](https://user-images.githubusercontent.com/232522/124464371-0856d380-dd8c-11eb-85ce-54ce3e630b99.png)
 
 
+## Notes on S3 Buckets required
+
+Three buckets are required (with edited names such as substituting dsikar for anair, etc)
+
+* dsikar.models.bucket	
+* tensorflow-images-for-inference-dsikar	
+* tensorflow-images-predictions-dsikar
+
+1. Upload firemodel.h5 to dsikar.models.bucket
+2. Upload image for prediction to tensorflow-images-for-inference-dsikar
+3. Prediction (image name + ".txt" will appear in bucket tensorflow-images-predictions-dsikar
+
+
+
+
