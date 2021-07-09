@@ -68,6 +68,7 @@ Three buckets are required (with edited names such as substituting dsikar for an
 * dsikar.models.bucket	
 * tensorflow-images-for-inference-dsikar	
 * tensorflow-images-predictions-dsikar
+NOTE: this last bucket needs FULL permissions, not the default AmazonS3ReadOnlyAccess permissions.
 
 1. Upload firemodel.h5 to dsikar.models.bucket
 2. Upload image for prediction to tensorflow-images-for-inference-dsikar
