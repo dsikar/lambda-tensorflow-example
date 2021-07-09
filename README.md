@@ -21,6 +21,8 @@ https://github.com/CityDataScienceSociety/ComputerVisionWorkshops/tree/main/dete
 3. In app.py, edit line adding appropriate bucket and model name
 ```
 result = client_s3.download_file("dsikar.models.bucket",'firemodel.h5', "/tmp/firemodel.h5")
+(...)
+client_s3.put_object(Body=response_str, Bucket='tensorflow-images-predictions-dsikar', Key=filename)
 ```
 
 4. Configure AWS CLI, create docker image and upload, changing AWS Account ID and region as appropriate
