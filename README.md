@@ -74,28 +74,5 @@ NOTE: this last bucket needs FULL permissions, not the default AmazonS3ReadOnlyA
 2. Upload image for prediction to tensorflow-images-for-inference-dsikar
 3. Prediction (image name + ".txt" will appear in bucket tensorflow-images-predictions-dsikar
 
-```
-import setuptools
-
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-    name="pynosy",
-    version="0.1.0",
-    author="jclarkr7",
-    author_email="jclarkr7@jci.com",
-    description="Python package to emulate Nosy functionality",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.jci.com/sensors-software/pyNosy",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
-    ],
-    python_requires='>=3.6',
-)
-```
 
 
